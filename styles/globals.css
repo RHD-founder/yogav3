@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+/* CSS Custom Properties for Colors */
+:root {
+  --color-primary: #b09c84;
+  --color-secondary: #8b7355;
+  --color-accent: #dcc6a0;
+  --color-background: #faf8f5;
+  --color-background-alt: #f5f1eb;
+  --color-dark: #2e2b26;
+  --color-text-light: #6b6b6b;
+  --color-beige-light: #f0ebe3;
+  --color-beige-dark: #d4c4b0;
+  --color-hero-text: #ba936f;
+}
+
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-dark font-sans antialiased;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .font-system-ui {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  /* Navigation specific styles for individual control */
+  .nav-logo {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    line-height: 1.2 !important;
+  }
+
+  .nav-link {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+  }
+
+  .nav-button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+  }
+
+  .nav-mobile-link {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+  }
+
+  .nav-mobile-button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Splash Screen Styles */
+  .splash-screen {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .splash-text {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .splash-cursor {
+    animation: blink 1s infinite;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .splash-fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+  }
+
+  /* Hero Section Styles - Individual Element Control */
+
+  /* Hero Container */
+  .hero-section {
+    @apply relative min-h-screen bg-white overflow-hidden;
+  }
+
+  /* Background Decorative Shapes */
+  .hero-bg-shape-1 {
+    @apply absolute top-0 left-0 w-32 h-32 bg-beige-light rounded-full opacity-30 -translate-x-16 -translate-y-16;
+  }
+
+  .hero-bg-shape-2 {
+    @apply absolute top-20 right-0 w-24 h-24 bg-beige-light rounded-full opacity-30 translate-x-12;
+  }
+
+  .hero-bg-shape-3 {
+    @apply absolute bottom-20 left-20 w-20 h-20 bg-beige-light rounded-full opacity-20;
+  }
+
+  /* Hero Content Container */
+  .hero-content-container {
+    @apply container mx-auto container-padding min-h-screen flex items-center;
+  }
+
+  /* Hero Grid Layout */
+  .hero-grid {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full;
+  }
+
+  /* Left Panel Container */
+  .hero-left-panel {
+    @apply order-2 lg:order-1;
+  }
+
+  .hero-text-container {
+    @apply max-w-7xl;
+  }
+
+  /* Main Quote/Heading */
+  .hero-main-quote {
+    @apply font-serif text-3xl md:text-3xl lg:text-3xl xl:text-5xl font-light text-hero-text mb-10 leading-[1.1] tracking-tight;
+  }
+
+  /* Descriptive Paragraph */
+  .hero-description {
+    @apply text-lg md:text-xl lg:text-xl text-text-light mb-16 leading-relaxed max-w-xl font-light;
+  }
+
+  /* Read More Button Container */
+  .hero-read-more-btn {
+    display: flex;
+    align-items: center;
+    gap: -20px;
+    position: relative;
+  }
+
+  /* Partial Circle Container */
+  .hero-circle-container {
+    @apply relative w-20 h-20 flex items-center justify-center z-0;
+  }
+
+  /* Circle SVG */
+  .hero-circle-svg {
+    @apply w-20 h-20 absolute;
+  }
+
+  /* Circle Path */
+  .hero-circle-path {
+    transition: stroke 0.3s ease;
+  }
+
+  .hero-read-more-btn:hover .hero-circle-path {
+    stroke: var(--color-primary);
+  }
+
+  /* Inner Filled Circle */
+  .hero-inner-circle {
+    @apply w-16 h-16 rounded-full opacity-30;
+  }
+
+  /* Read More Text and Arrow */
+  .hero-read-more-text {
+    display: flex;
+    align-items: center;
+    color: rgb(107, 105, 105);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 10;
+    transition: color 0.3s ease;
+  }
+
+  .hero-read-more-btn:hover .hero-read-more-text {
+    color: var(--color-primary);
+  }
+
+  /* Arrow Icon */
+  .hero-arrow-icon {
+    margin-left: 1rem;
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .hero-read-more-btn:hover .hero-arrow-icon {
+    transform: translateX(0.25rem);
+  }
+
+  /* Right Panel Container */
+  .hero-right-panel {
+    @apply order-1 lg:order-2;
+  }
+
+  .hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-image-container {
+      justify-content: flex-end;
+    }
+  }
+
+  /* Image Wrapper */
+  .hero-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(1);
+    transition: transform 0.7s ease;
+    max-width: 28rem;
+  }
+
+  .hero-image-container:hover .hero-image-wrapper {
+    transform: scale(1.02);
+  }
+
+  /* Hero Image */
+  .hero-image {
+    @apply w-full h-auto object-cover;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
