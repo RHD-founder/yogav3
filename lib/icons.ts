@@ -10,11 +10,25 @@ type IconCategories = {
   brand: Record<string, IconDefinition>;
 };
 
+// Filter out non-icon properties and create clean icon objects
+const filterIcons = (
+  iconModule: Record<string, unknown>
+): Record<string, IconDefinition> => {
+  const filtered: Record<string, IconDefinition> = {};
+  Object.keys(iconModule).forEach((key) => {
+    const item = iconModule[key];
+    if (item && typeof item === "object" && "iconName" in item) {
+      filtered[key] = item as IconDefinition;
+    }
+  });
+  return filtered;
+};
+
 // Create an object with all icon categories
 export const icons: IconCategories = {
-  solid: solidIcons,
-  regular: regularIcons,
-  brand: brandIcons,
+  solid: filterIcons(solidIcons),
+  regular: filterIcons(regularIcons),
+  brand: filterIcons(brandIcons),
 };
 
 // Helper function to get an icon by name and category
@@ -28,9 +42,7 @@ export function getIcon(
 
 // Common yoga-related icons for quick access
 export const yogaIcons = {
-  yoga: solidIcons.faYoga,
-  meditation: solidIcons.faMeditation,
-  om: solidIcons.faOm,
+  person: solidIcons.faUser,
   personWalking: solidIcons.faPersonWalking,
   dumbbell: solidIcons.faDumbbell,
   heartPulse: solidIcons.faHeartPulse,
@@ -42,6 +54,7 @@ export const yogaIcons = {
   star: solidIcons.faStar,
   check: solidIcons.faCheck,
   circleCheck: solidIcons.faCircleCheck,
+  leaf: solidIcons.faLeaf,
 };
 
 // Common social media icons for quick access
