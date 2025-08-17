@@ -10,10 +10,11 @@ import {
     faPinterest,
     faTiktok
 } from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 interface SocialMediaLink {
     name: string;
-    icon: any;
+    icon: IconDefinition;
     url: string;
     color: string;
 }

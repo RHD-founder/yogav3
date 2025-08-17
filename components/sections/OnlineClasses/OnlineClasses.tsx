@@ -1,13 +1,18 @@
+import Image from "next/image";
+
 export default function OnlineClasses() {
     return (
         <section className="bg-white py-20">
             <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 {/* Image */}
-                <img
-                    src="/images/online-class.png"
-                    alt="Online Yoga Classes"
-                    className="rounded-xl shadow-md"
-                />
+                <div className="relative w-full h-96">
+                    <Image
+                        src="/images/online-class.png"
+                        alt="Online Yoga Classes"
+                        fill
+                        className="rounded-xl shadow-md object-cover"
+                    />
+                </div>
 
                 {/* Content */}
                 <div>

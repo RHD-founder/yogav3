@@ -1,7 +1,7 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faUser, faCalendarAlt, faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faCalendarAlt, faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
 const scheduleData = [

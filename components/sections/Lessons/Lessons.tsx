@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const lessons = [
     { title: "Yoga for Beginners", img: "/images/lesson-1.png" },
     { title: "Stretch Poses", img: "/images/lesson-2.png" },
@@ -15,7 +17,9 @@ export default function Lessons() {
                             key={i}
                             className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition"
                         >
-                            <img src={lesson.img} alt={lesson.title} className="w-full h-64 object-cover" />
+                            <div className="relative w-full h-64">
+                                <Image src={lesson.img} alt={lesson.title} fill className="object-cover" />
+                            </div>
                             <div className="p-6">
                                 <h3 className="text-xl font-medium">{lesson.title}</h3>
                             </div>

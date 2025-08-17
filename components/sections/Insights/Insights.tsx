@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Insights() {
     const instructors = [
@@ -85,7 +84,7 @@ export default function Insights() {
                 </div>
 
                 {/* CTA Section */}
-                
+
             </div>
         </section>
     );

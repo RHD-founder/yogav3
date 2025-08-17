@@ -1,8 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faYoga, faHeartPulse, faDumbbell, faMeditation, faPersonWalking,
-    faCircleCheck, faStar, faCalendarDays
+    faHeartPulse, faDumbbell, faPersonWalking,
+    faCircleCheck, faStar, faCalendarDays, faUser, faLeaf
 } from '@fortawesome/free-solid-svg-icons';
 import {
     faFacebook, faInstagram, faTwitter, faYoutube, faPinterest, faTiktok
@@ -17,8 +17,8 @@ const IconExamples = () => {
                 <h3 className="text-xl mb-4 font-medium">Solid Icons</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
-                        <FontAwesomeIcon icon={faYoga} className="text-primary text-3xl mb-2" />
-                        <span className="text-sm text-text-light">faYoga</span>
+                        <FontAwesomeIcon icon={faUser} className="text-primary text-3xl mb-2" />
+                        <span className="text-sm text-text-light">faUser</span>
                     </div>
                     <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
                         <FontAwesomeIcon icon={faHeartPulse} className="text-primary text-3xl mb-2" />
@@ -29,8 +29,8 @@ const IconExamples = () => {
                         <span className="text-sm text-text-light">faDumbbell</span>
                     </div>
                     <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
-                        <FontAwesomeIcon icon={faMeditation} className="text-primary text-3xl mb-2" />
-                        <span className="text-sm text-text-light">faMeditation</span>
+                        <FontAwesomeIcon icon={faLeaf} className="text-primary text-3xl mb-2" />
+                        <span className="text-sm text-text-light">faLeaf</span>
                     </div>
                     <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
                         <FontAwesomeIcon icon={faPersonWalking} className="text-primary text-3xl mb-2" />
@@ -85,15 +85,15 @@ const IconExamples = () => {
                 <h3 className="text-xl mb-4 font-medium">Icon Sizes & Styles</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
-                        <FontAwesomeIcon icon={faYoga} className="text-primary text-4xl mb-2" />
+                        <FontAwesomeIcon icon={faUser} className="text-primary text-4xl mb-2" />
                         <span className="text-sm text-text-light">Size: 4xl</span>
                     </div>
                     <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
-                        <FontAwesomeIcon icon={faYoga} className="text-primary text-2xl mb-2" spin />
+                        <FontAwesomeIcon icon={faUser} className="text-primary text-2xl mb-2" spin />
                         <span className="text-sm text-text-light">Spinning</span>
                     </div>
                     <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
-                        <FontAwesomeIcon icon={faYoga} className="text-primary text-2xl mb-2" pulse />
+                        <FontAwesomeIcon icon={faUser} className="text-primary text-2xl mb-2" pulse />
                         <span className="text-sm text-text-light">Pulse</span>
                     </div>
                 </div>
