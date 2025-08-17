@@ -1,11 +1,9 @@
 import Hero from "@/components/sections/Hero/Hero";
 import Practice from "@/components/sections/Practice/Practice";
 import ClassTypes from "@/components/sections/ClassTypes/ClassTypes";
-import Features from "@/components/sections/Features/Features";
 import Instructors from "@/components/sections/Instructors/Instructors";
 import Pricing from "@/components/sections/Pricing/Pricing";
 import InstagramSection from "@/components/sections/Instagram/InstagramSection";
-import FreeTrial from "@/components/sections/FreeTrial/FreeTrial";
 import Newsletter from "@/components/sections/Newsletter/Newsletter";
 import Schedule from "@/components/sections/Schedule/Schedule";
 import Community from "@/components/sections/Community/Community";
@@ -21,7 +19,7 @@ export default function HomePage() {
             {/* Class Types */}
             <ClassTypes />
             {/* Features */}
-            <Features />
+          
             {/* Instructors */}
             <Instructors />
             {/* Pricing */}
@@ -29,7 +27,7 @@ export default function HomePage() {
             {/* Instagram Gallery */}
             <InstagramSection />
             {/* Free Trial */}
-            <FreeTrial />
+           
             {/* Newsletter/Contact Form */}
             <Newsletter />
             {/* Schedule */}

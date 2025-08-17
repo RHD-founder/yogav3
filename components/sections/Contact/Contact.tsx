@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone, faLocationDot, faClock, faPaperPlane, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -52,28 +53,28 @@ export default function Contact() {
 
     const contactInfo = [
         {
-            icon: MapPin,
+            icon: faLocationDot,
             title: "Visit Us",
             details: ["123 Yoga Lane", "Serenity City, YS 90210"],
             action: "Get Directions",
             actionLink: "https://maps.google.com"
         },
         {
-            icon: Phone,
+            icon: faPhone,
             title: "Call Us",
             details: ["(123) 456-7890", "Available Mon-Sun"],
             action: "Call Now",
             actionLink: "tel:+1234567890"
         },
         {
-            icon: Mail,
+            icon: faEnvelope,
             title: "Email Us",
             details: ["info@theyogastudio.com", "We reply within 24 hours"],
             action: "Send Email",
             actionLink: "mailto:info@theyogastudio.com"
         },
         {
-            icon: Clock,
+            icon: faClock,
             title: "Studio Hours",
             details: ["Mon-Fri: 6 AM - 9 PM", "Sat-Sun: 7 AM - 6 PM"],
             action: "View Schedule",
@@ -87,13 +88,13 @@ export default function Contact() {
                 <div className="container mx-auto container-padding text-center">
                     <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl max-w-2xl mx-auto">
                         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <CheckCircle size={40} className="text-green-600" />
+                            <FontAwesomeIcon icon={faCircleCheck} size="2x" className="text-green-600" />
                         </div>
                         <h2 className="font-serif text-3xl md:text-4xl text-dark mb-4">
                             Message Sent Successfully!
                         </h2>
                         <p className="text-lg text-text-light mb-6">
-                            Thank you for reaching out to us. We've received your message and will get back to you within 24 hours.
+                            Thank you for reaching out to us. We&apos;ve received your message and will get back to you within 24 hours.
                         </p>
                         <button
                             onClick={() => setIsSubmitted(false)}
@@ -119,7 +120,7 @@ export default function Contact() {
                     </h2>
                     <p className="text-lg text-text-light max-w-3xl mx-auto leading-relaxed">
                         Have questions about our classes, want to schedule a private session, or just want to say hello?
-                        We'd love to hear from you. Reach out and let's start a conversation.
+                        We&apos;d love to hear from you. Reach out and let&apos;s start a conversation.
                     </p>
                 </div>
 
@@ -224,7 +225,7 @@ export default function Contact() {
                                     </span>
                                 ) : (
                                     <span className="flex items-center justify-center gap-2">
-                                        <Send size={20} />
+                                        <FontAwesomeIcon icon={faPaperPlane} />
                                         Send Message
                                     </span>
                                 )}
@@ -237,8 +238,8 @@ export default function Contact() {
                         <div>
                             <h3 className="font-serif text-2xl text-dark mb-6">Contact Information</h3>
                             <p className="text-text-light leading-relaxed mb-6">
-                                We're here to help you on your yoga journey. Whether you have questions about classes,
-                                want to schedule a visit, or need information about our studio, don't hesitate to reach out.
+                                We&apos;re here to help you on your yoga journey. Whether you have questions about classes,
+                                want to schedule a visit, or need information about our studio, don&apos;t hesitate to reach out.
                             </p>
                         </div>
 
@@ -246,7 +247,7 @@ export default function Contact() {
                             {contactInfo.map((info, index) => (
                                 <div key={index} className="flex items-start space-x-4">
                                     <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <info.icon size={24} className="text-primary" />
+                                        <FontAwesomeIcon icon={info.icon} className="text-primary" />
                                     </div>
                                     <div className="flex-1">
                                         <h4 className="font-semibold text-dark mb-2">{info.title}</h4>

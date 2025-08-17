@@ -130,10 +130,10 @@ export default function Newsletter() {
 
                             <button
                                 type="submit"
-                                disabled={!agreed || isSubmitting}
+                                disabled={isSubmitting}
                                 className={`w-full py-4 px-8 rounded-lg font-medium transition-all duration-200 ${agreed && !isSubmitting
-                                    ? "bg-primary text-white hover:bg-secondary transform hover:scale-105"
-                                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                                    ? "bg-stone-900 text-white hover:scale-105"
+                                    : "bg-gray-400 text-gray-600 cursor-not-allowed hover:scale-105"
                                     }`}
                             >
                                 {isSubmitting ? "Submitting..." : "Submit"}

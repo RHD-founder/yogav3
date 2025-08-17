@@ -2,17 +2,30 @@
 import { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark, faHome, faUserGroup, faCalendarDays, faDumbbell, faEnvelope, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    // Function to get the icon based on the icon name
+    const getIcon = (iconName: string) => {
+        switch (iconName) {
+            case 'home': return faHome;
+            case 'userGroup': return faUserGroup;
+            case 'calendarDays': return faCalendarDays;
+            case 'yoga': return faDumbbell; // Using dumbbell as yoga icon isn't available
+            case 'envelope': return faEnvelope;
+            default: return faHome;
+        }
+    };
+
     const navItems = [
-        { name: "Home", href: "/" },
-        { name: "Teachers", href: "/teachers" },
-        { name: "Timetable", href: "/timetable" },
-        { name: "Types Of Yoga", href: "/types-of-yoga" },
-        { name: "Contacts", href: "/contact" },
+        { name: "Home", href: "/", icon: "home" },
+        { name: "Teachers", href: "/teachers", icon: "userGroup" },
+        { name: "Timetable", href: "/timetable", icon: "calendarDays" },
+        { name: "Types Of Yoga", href: "/types-of-yoga", icon: "yoga" },
+        { name: "Contacts", href: "/contact", icon: "envelope" },
     ];
 
     return (
@@ -40,9 +53,10 @@ const Navbar = () => {
                 <div className="hidden md:block">
                     <Link
                         href="/booking"
-                        className="nav-button bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-all duration-200 shadow-sm hover:shadow-md"
+                        className="nav-button btn-primary text-black px-6 py-2 rounded-full hover:bg-secondary transition-all duration-200 shadow-sm hover:shadow-md flex items-center space-x-2"
                     >
-                        Sing Up
+                        <FontAwesomeIcon icon={faUserPlus} />
+                        <span>Sign Up</span>
                     </Link>
                 </div>
 
@@ -52,7 +66,7 @@ const Navbar = () => {
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Toggle menu"
                 >
-                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    {isMenuOpen ? <FontAwesomeIcon icon={faXmark} size="lg" /> : <FontAwesomeIcon icon={faBars} size="lg" />}
                 </button>
             </div>
 
@@ -68,18 +82,20 @@ const Navbar = () => {
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="nav-mobile-link text-gray-700 hover:text-primary transition-colors duration-200 py-2"
+                            className="nav-mobile-link text-gray-700 hover:text-primary transition-colors duration-200 py-2 flex items-center"
                             onClick={() => setIsMenuOpen(false)}
                         >
+                            <FontAwesomeIcon icon={getIcon(item.icon)} className="mr-3 w-4" />
                             {item.name}
                         </Link>
                     ))}
                     <Link
                         href="/booking"
-                        className="nav-mobile-button bg-primary text-white px-6 py-3 rounded-full text-center hover:bg-secondary transition-all duration-200 mt-4"
+                        className="nav-mobile-button btn-primary text-black px-6 py-3 rounded-full text-center hover:bg-secondary transition-all duration-200 mt-4 flex items-center justify-center space-x-2"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        Sing Up
+                        <FontAwesomeIcon icon={faUserPlus} />
+                        <span>Sign Up</span>
                     </Link>
                 </div>
             </div>

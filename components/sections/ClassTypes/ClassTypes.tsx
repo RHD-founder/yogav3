@@ -53,9 +53,7 @@ export default function ClassTypes() {
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-dark mb-6">
-                        OUR YOGA
-                        <br />
-                        <span className="text-primary">CLASSES</span>
+                        OUR YOGA CLASSES
                     </h2>
                     <p className="text-lg text-text-light max-w-3xl mx-auto leading-relaxed">
                         Discover the perfect class for your practice level and goals. From gentle beginner

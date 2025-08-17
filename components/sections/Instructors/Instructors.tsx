@@ -35,9 +35,8 @@ export default function Instructors() {
                 {/* Section Header */}
                 <div className="text-center mb-20">
                     <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-dark mb-6">
-                        MEET OUR
-                        <br />
-                        <span className="text-primary">INSTRUCTORS</span>
+                        MEET OUR INSTRUCTORS
+                        
                     </h2>
                     <p className="text-lg text-text-light max-w-3xl mx-auto leading-relaxed">
                         Our experienced and certified instructors are passionate about sharing the

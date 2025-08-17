@@ -2,20 +2,22 @@ import { ButtonHTMLAttributes, forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: "primary" | "secondary" | "outline" | "ghost";
+    variant?: "primary" | "secondary" | "outline" | "ghost" | "minimal";
     size?: "sm" | "md" | "lg";
+    withArrow?: boolean;
     children: React.ReactNode;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant = "primary", size = "md", children, ...props }, ref) => {
-        const baseClasses = "inline-flex items-center justify-center rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+    ({ className, variant = "primary", size = "md", withArrow = false, children, ...props }, ref) => {
+        const baseClasses = "inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed";
 
         const variantClasses = {
-            primary: "bg-primary text-white hover:bg-secondary",
-            secondary: "bg-secondary text-white hover:bg-primary",
-            outline: "border border-primary text-primary hover:bg-primary hover:text-white",
-            ghost: "text-primary hover:bg-accent",
+            primary: "bg-primary text-white hover:bg-secondary rounded-lg",
+            secondary: "bg-secondary text-white hover:bg-primary rounded-lg",
+            outline: "border border-primary text-primary hover:bg-primary hover:text-white rounded-lg",
+            ghost: "text-primary hover:bg-accent rounded-lg",
+            minimal: "border border-gray-400 text-gray-800 hover:bg-gray-100 rounded-full group",
         };
 
         const sizeClasses = {
@@ -35,7 +37,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 )}
                 {...props}
             >
-                {children}
+                <span>{children}</span>
+                {withArrow && (
+                    <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+                )}
             </button>
         );
     }

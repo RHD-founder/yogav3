@@ -10,6 +10,8 @@
     |-- (marketing)
         |-- contact
             |-- page.tsx
+        |-- icons
+            |-- page.tsx
         |-- layout.tsx
         |-- loading.tsx
         |-- not-found.tsx
@@ -49,9 +51,7 @@
         |-- Contact
             |-- Contact.tsx
         |-- Features
-            |-- Features.tsx
         |-- FreeTrial
-            |-- FreeTrial.tsx
         |-- Hero
             |-- Hero.tsx
         |-- Insights
@@ -78,9 +78,16 @@
     |-- SplashScreen.tsx
     |-- SplashScreenWrapper.tsx
     |-- ui
+        |-- AnimatedElement.tsx
         |-- Button.tsx
         |-- Card.tsx
+        |-- dialog.tsx
+        |-- GoogleMap.tsx
+        |-- IconExamples.tsx
         |-- Input.tsx
+        |-- InputWithIcon.tsx
+        |-- SocialMediaLinks.tsx
+|-- components.json
 |-- config
     |-- site.ts
     |-- theme.ts
@@ -89,6 +96,8 @@
 |-- lib
     |-- analytics.ts
     |-- cms.ts
+    |-- fontawesome.ts
+    |-- icons.ts
     |-- seo.ts
     |-- utils.ts
 |-- next-env.d.ts
@@ -100,6 +109,8 @@
     |-- favicons
     |-- icons
     |-- images
+        |-- 14788 (1).jpg
+        |-- 14788.jpg
         |-- hero-yoga.png
 |-- README.md
 |-- styles

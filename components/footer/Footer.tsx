@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faPhone, faLocationDot, faClock } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-dark text-white">
+        <footer className=" bg-stone-200 text-black">
             {/* Main Footer Content */}
             <div className="section-padding">
                 <div className="container mx-auto container-padding">
@@ -13,7 +15,7 @@ const Footer = () => {
                         {/* Studio Info */}
                         <div className="lg:col-span-2">
                             <Link href="/" className="inline-block mb-6">
-                                <span className="font-serif text-3xl font-bold text-primary">YOGA</span>
+                                <span className=" text-3xl nav-logo text-primary">The Yoga Studio</span>
                             </Link>
                             <p className="text-text-light text-sm leading-relaxed max-w-md mb-6">
                                 Discover inner peace and physical strength through our expertly guided yoga sessions.
@@ -24,32 +26,36 @@ const Footer = () => {
                                     href="https://facebook.com/theyogastudio"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                                    aria-label="Visit our Facebook page"
+                                    className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-blue-500 transition-all duration-300"
                                 >
-                                    <Facebook size={20} />
+                                    <FontAwesomeIcon icon={faFacebookF} size="lg" />
                                 </a>
                                 <a
                                     href="https://instagram.com/theyogastudio"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                                    aria-label="Visit our Instagram page"
+                                    className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-fuchsia-500 transition-all duration-300"
                                 >
-                                    <Instagram size={20} />
+                                    <FontAwesomeIcon icon={faInstagram} size="lg" />
                                 </a>
                                 <a
                                     href="https://twitter.com/theyogastudio"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                                    aria-label="Visit our Twitter page"
+                                    className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary hover:bg-primary  transition-all duration-300"
                                 >
-                                    <Twitter size={20} />
+                                    <FontAwesomeIcon icon={faXTwitter} size="lg" />
                                 </a>
                             </div>
                         </div>
 
                         {/* Quick Links */}
                         <div>
-                            <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
+                            <h3 className="custom-font
+                            text-lg font-semibold text-black mb-6">Quick Links</h3>
                             <ul className="space-y-3">
                                 <li>
                                     <Link href="/types-of-yoga" className="text-text-light hover:text-primary transition-colors duration-200 text-sm">
@@ -86,16 +92,17 @@ const Footer = () => {
 
                         {/* Contact Info */}
                         <div>
-                            <h3 className="text-lg font-semibold text-white mb-6">Contact Us</h3>
+                            <h3 className="custom-font
+                            text-lg font-semibold text-black mb-6">Contact Us</h3>
                             <div className="space-y-4">
                                 <div className="flex items-start space-x-3">
-                                    <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
+                                    <FontAwesomeIcon icon={faLocationDot} className="text-primary mt-1 flex-shrink-0" />
                                     <span className="text-text-light text-sm">
                                         123 Yoga Lane, Serenity City, YS 90210
                                     </span>
                                 </div>
                                 <div className="flex items-start space-x-3">
-                                    <Mail size={18} className="text-primary mt-1 flex-shrink-0" />
+                                    <FontAwesomeIcon icon={faEnvelope} className="text-primary mt-1 flex-shrink-0" />
                                     <a
                                         href="mailto:info@theyogastudio.com"
                                         className="text-text-light hover:text-primary transition-colors duration-200 text-sm"
@@ -104,7 +111,7 @@ const Footer = () => {
                                     </a>
                                 </div>
                                 <div className="flex items-start space-x-3">
-                                    <Phone size={18} className="text-primary mt-1 flex-shrink-0" />
+                                    <FontAwesomeIcon icon={faPhone} className="text-primary mt-1 flex-shrink-0" />
                                     <a
                                         href="tel:+1234567890"
                                         className="text-text-light hover:text-primary transition-colors duration-200 text-sm"
@@ -113,7 +120,7 @@ const Footer = () => {
                                     </a>
                                 </div>
                                 <div className="flex items-start space-x-3">
-                                    <Clock size={18} className="text-primary mt-1 flex-shrink-0" />
+                                    <FontAwesomeIcon icon={faClock} className="text-primary mt-1 flex-shrink-0" />
                                     <div className="text-text-light text-sm">
                                         <div>Mon - Fri: 6 AM - 9 PM</div>
                                         <div>Sat - Sun: 7 AM - 6 PM</div>

@@ -80,9 +80,11 @@ export default function Practice() {
                                 <div className="text-sm text-text-light">Years Experience</div>
                             </div>
                         </div>
-                        <Link href="/teachers" className="btn-secondary">
-                            LEARN MORE
-                        </Link>
+                        <div className="text-center">
+                            <Link href="/teachers" className="btn-secondary">
+                                LEARN MORE
+                            </Link>
+                        </div>
                     </div>
                     <div>
                         <div className="relative">

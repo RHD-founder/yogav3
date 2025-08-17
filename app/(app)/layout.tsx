@@ -8,12 +8,12 @@ export default function AppLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="flex min-h-screen flex-col">
+        <div className=" flex min-h-screen flex-col">
             {/* Navigation */}
             <Navbar />
 
             {/* Page Content */}
-            <main className="flex-1 bg-gray-50">{children}</main>
+            <main className="flex-1 bg-stone-100">{children}</main>
 
             {/* Footer */}
             <Footer />

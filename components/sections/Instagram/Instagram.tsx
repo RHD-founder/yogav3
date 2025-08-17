@@ -54,9 +54,7 @@ export default function InstagramSection() {
                 {/* Section Header */}
                 <div className="text-center mb-20">
                     <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-dark mb-6">
-                        FOLLOW OUR
-                        <br />
-                        <span className="text-primary">JOURNEY</span>
+                        FOLLOW OUR JOURNEY
                     </h2>
                     <p className="text-lg text-text-light max-w-3xl mx-auto leading-relaxed">
                         Get inspired by our daily yoga practice, community moments, and wellness tips.

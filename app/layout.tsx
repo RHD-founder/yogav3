@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import SplashScreenWrapper from "@/components/SplashScreenWrapper";
+import "@/lib/fontawesome";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+// Prevent Font Awesome from adding its CSS automatically since it's being imported above
+config.autoAddCss = false;
 
 export const metadata: Metadata = {
     title: {
